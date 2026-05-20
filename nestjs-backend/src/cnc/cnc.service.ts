@@ -1,6 +1,7 @@
 import { Injectable, OnModuleInit, Inject } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 import { interval } from 'rxjs';
+import { CncGateway } from './cnc.gateway';
 
 export interface CncVeri {
   makine_id: string;
@@ -17,21 +18,26 @@ export class CncService implements OnModuleInit {
 
   constructor(
     @Inject('MQTT_CLIENT') private readonly mqttClient: ClientProxy,
+    private readonly cncGateway: CncGateway,
   ) {}
 
   onModuleInit() {
     interval(2000).subscribe(() => {
       const veri = this.sahteVeriUret('CNC-001');
       this.veriler.push(veri);
+
       this.mqttClient.emit('fabrika/cnc/1/veri', veri);
+      this.cncGateway.veriGonder(veri);
 
       if (veri.sicaklik > 85) {
-        this.mqttClient.emit('fabrika/cnc/1/alarm', {
+        const alarm = {
           makine_id: veri.makine_id,
           mesaj: 'Yüksek sıcaklık alarmı',
           deger: veri.sicaklik,
           zaman: veri.zaman,
-        });
+        };
+        this.mqttClient.emit('fabrika/cnc/1/alarm', alarm);
+        this.cncGateway.alarmGonder(alarm);
       }
     });
   }

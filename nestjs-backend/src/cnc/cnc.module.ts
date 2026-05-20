@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { CncService } from './cnc.service';
 import { CncController } from './cnc.controller';
+import { CncGateway } from './cnc.gateway';
 
 @Module({
   imports: [
@@ -13,7 +14,7 @@ import { CncController } from './cnc.controller';
       },
     ]),
   ],
-  providers: [CncService],
+  providers: [CncService, CncGateway],
   controllers: [CncController],
 })
 export class CncModule {}
