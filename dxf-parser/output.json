@@ -1,0 +1,136 @@
+{
+  "dosya": "sample_parca.dxf",
+  "tarih": "2026-05-22T18:56:00.752005",
+  "toplam_parca": 4,
+  "parcalar": [
+    {
+      "parca_id": "P001",
+      "tip": "DIKDORTGEN",
+      "noktalar": [
+        {
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "x": 100.0,
+          "y": 0.0
+        },
+        {
+          "x": 100.0,
+          "y": 50.0
+        },
+        {
+          "x": 0.0,
+          "y": 50.0
+        }
+      ],
+      "baslangic": {
+        "x": 0.0,
+        "y": 0.0
+      },
+      "boyut": {
+        "genislik": 100.0,
+        "yukseklik": 50.0
+      },
+      "merkez": {
+        "x": 50.0,
+        "y": 25.0
+      }
+    },
+    {
+      "parca_id": "P002",
+      "tip": "DAIRE",
+      "merkez": {
+        "x": 50.0,
+        "y": 25.0
+      },
+      "yaricap": 10.0,
+      "baslangic": {
+        "x": 40.0,
+        "y": 15.0
+      },
+      "boyut": {
+        "genislik": 20.0,
+        "yukseklik": 20.0
+      }
+    },
+    {
+      "parca_id": "P003",
+      "tip": "DIKDORTGEN",
+      "noktalar": [
+        {
+          "x": 150.0,
+          "y": 0.0
+        },
+        {
+          "x": 250.0,
+          "y": 0.0
+        },
+        {
+          "x": 250.0,
+          "y": 80.0
+        },
+        {
+          "x": 150.0,
+          "y": 80.0
+        }
+      ],
+      "baslangic": {
+        "x": 150.0,
+        "y": 0.0
+      },
+      "boyut": {
+        "genislik": 100.0,
+        "yukseklik": 80.0
+      },
+      "merkez": {
+        "x": 200.0,
+        "y": 40.0
+      }
+    },
+    {
+      "parca_id": "P004",
+      "tip": "POLIGON",
+      "noktalar": [
+        {
+          "x": 300.0,
+          "y": 0.0
+        },
+        {
+          "x": 400.0,
+          "y": 0.0
+        },
+        {
+          "x": 400.0,
+          "y": 30.0
+        },
+        {
+          "x": 350.0,
+          "y": 30.0
+        },
+        {
+          "x": 350.0,
+          "y": 80.0
+        },
+        {
+          "x": 300.0,
+          "y": 80.0
+        }
+      ],
+      "baslangic": {
+        "x": 300.0,
+        "y": 0.0
+      },
+      "boyut": {
+        "genislik": 100.0,
+        "yukseklik": 80.0
+      },
+      "merkez": {
+        "x": 350.0,
+        "y": 40.0
+      }
+    }
+  ],
+  "robot_komutu": "HAZIR",
+  "aciklama": "RoboCAM benzeri koordinat ciktisi - robot besleme formati"
+}
